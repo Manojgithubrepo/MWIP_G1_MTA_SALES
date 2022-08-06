@@ -1,0 +1,19 @@
+ID: MWIP_G1_MTA_SALES
+_schema-version: '2.1'
+version: 0.0.1
+
+modules:
+ - name: MWIP_GIT_DB
+   type: hdb
+   path: MWIP_GIT_DB
+   requires:
+    - name: hdi_MWIP_GIT_DB
+
+resources:
+ - name: hdi_MWIP_GIT_DB
+   parameters:
+      config:
+         schema: MWIP_GIT_SCH
+   properties:
+      hdi-container-name: ${service-name}
+   type: com.sap.xs.hdi-container
